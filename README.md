@@ -1,7 +1,7 @@
 # RAG_QA_for_PDFs
 
 # FUNCIONALIDADES.
-  - A aplicação foi desenvolvida para responder perguntas sobre concursos baseada no pdf escolhido
+  - A aplicação foi desenvolvida para gerar perguntas sobre Regras de Triathlon baseada no pdf 
 
 # COMO USAR:
   - Instale as dependências do arquivo requirements.txt
