@@ -1,5 +1,5 @@
 """
-📄 CONVERSOR PDF → TEXTO SIMPLES
+📄 CONVERSOR PDF -> TEXTO SIMPLES
 ===============================
 Extrai texto do PDF de forma simples sem dependências complexas
 """
