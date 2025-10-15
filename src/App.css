@@ -1,0 +1,240 @@
+/* Estilos personalizados para o Gerador de Perguntas de Triathlon */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header personalizado */
+.navbar-brand {
+  font-size: 1.5rem !important;
+  font-weight: bold;
+}
+
+/* Cards com sombra suave */
+.card {
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* Botões principais */
+.btn-lg {
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 15px 25px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #059669, #10b981);
+  border: none;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #047857, #059669);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+/* Tabs personalizadas */
+.nav-tabs .nav-link {
+  border: none;
+  border-radius: 12px 12px 0 0;
+  font-weight: 600;
+  color: #6b7280;
+  transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  color: #1e40af;
+  border-bottom: 3px solid #3b82f6;
+}
+
+/* Cards de estatísticas */
+.card.bg-primary,
+.card.bg-success,
+.card.bg-info,
+.card.bg-warning {
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.card.bg-primary:hover,
+.card.bg-success:hover,
+.card.bg-info:hover,
+.card.bg-warning:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Form inputs */
+.form-control,
+.form-select {
+  border-radius: 10px;
+  border: 2px solid #e5e7eb;
+  transition: all 0.3s ease;
+  padding: 12px 16px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Badges de temas */
+.badge {
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.badge.bg-light:hover {
+  background-color: #e2e8f0 !important;
+  color: #1e40af !important;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Spinner personalizado */
+.spinner-border {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Alertas com bordas arredondadas */
+.alert {
+  border-radius: 12px;
+  border: none;
+}
+
+.alert-success {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #047857;
+}
+
+.alert-danger {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #dc2626;
+}
+
+/* Animações de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  .btn-lg {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+}
+
+/* Efeito hover nos cards de resultado */
+.card-body:hover {
+  background-color: #f8fafc;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para listas ordenadas */
+ol li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+/* Footer */
+footer {
+  background-color: #f8fafc;
+  margin-top: 3rem;
+}
+
+/* Loading overlay */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+/* Tema badge hover effect */
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+/* Card headers com gradiente */
+.card-header.bg-primary {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6) !important;
+}
+
+.card-header.bg-success {
+  background: linear-gradient(135deg, #059669, #10b981) !important;
+}
+
+.card-header.bg-info {
+  background: linear-gradient(135deg, #0891b2, #06b6d4) !important;
+}
+
+.card-header.bg-dark {
+  background: linear-gradient(135deg, #374151, #4b5563) !important;
+}
+
+/* Animação para resultados */
+.result-appear {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Melhorar contraste dos textos */
+.text-muted {
+  color: #6b7280 !important;
+}
+
+.fw-bold {
+  font-weight: 700 !important;
+}

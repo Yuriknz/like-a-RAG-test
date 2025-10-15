@@ -1,5 +1,3 @@
-# REGULAMENTO WORLD TRIATHLON 2024
-
 
 
 ## Página 1
