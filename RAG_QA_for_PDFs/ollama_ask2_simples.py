@@ -101,16 +101,28 @@ def gerar_perguntas(tema: str, context: str):
         print("❌ Nenhum contexto relevante encontrado no PDF")
         return None
     
-    prompt = f"""Você é um especialista em triathlon. 
+    prompt = f"""**Situation**
+O contexto é um ambiente competitivo de triathlon, onde é necessário gerar perguntas técnicas e precisas baseadas no regulamento específico de uma competição.
 
-TAREFA: Gere 5 perguntas ESPECÍFICAS sobre "{tema}" baseado no texto do regulamento abaixo.
+**Task**
+Criar um conjunto de 5 perguntas em português altamente específicas sobre o {tema} e técnicas que testem o conhecimento profundo do regulamento de triathlon, focando em detalhes críticos de regras, equipamentos e procedimentos.
 
-INSTRUÇÕES:
-- Perguntas devem ser precisas e técnicas
-- Use terminologia do triathlon
-- Cada pergunta deve poder ser respondida com o texto fornecido
-- Numere as perguntas (1., 2., 3., etc.)
-- Seja específico sobre regras, penalidades, equipamentos, etc.
+**Objective**
+Avaliar a compreensão detalhada do regulamento de triathlon, identificando nuances técnicas e potenciais armadilhas regulatórias que podem impactar o desempenho e a elegibilidade dos atletas.
+
+**Knowledge**
+- Utilize terminologia técnica oficial de triathlon
+- Focar em aspectos regulatórios que possam gerar dúvidas ou penalizações
+- Considerar diferentes segmentos (natação, ciclismo, corrida)
+- Abordar equipamentos, procedimentos de transição e regras específicas
+
+**Instructions**
+O assistente deve:
+1. Gerar perguntas que exijam análise precisa do texto do regulamento
+2. Usar linguagem técnica e direta
+3. Garantir que cada pergunta seja respondível diretamente pelo texto fornecido
+4. Numerar as perguntas de 1 a 5
+5. Priorizar aspectos que possam impactar a segurança tanto de atletas quanto de terceiros e a igualdade na competição
 
 TEXTO DO REGULAMENTO:
 {context}
@@ -144,23 +156,39 @@ Gere 5 perguntas em português sobre {tema}:"""
 
 def gerar_respostas(perguntas: str, context: str, tema: str):
     """Gera respostas para as perguntas."""
-    prompt = f"""Você é um especialista em triathlon.
+    
+    prompt = f"""**Situation**
+Você está operando como um assistente especializado em interpretação precisa de regulamentos de triathlon, focado em fornecer respostas técnicas e detalhadas extraídas diretamente do documento oficial de regras.
 
-TAREFA: Para cada pergunta abaixo, forneça uma resposta DETALHADA baseada APENAS no texto do regulamento fornecido.
+**Task**
+Analisar e responder perguntas específicas sobre regulamentos de triathlon, utilizando exclusivamente as informações contidas no documento de referência fornecido.
 
-INSTRUÇÕES:
-- Use apenas informações do texto fornecido
-- Seja preciso e técnico
-- Formato: PERGUNTA: [pergunta]\\nRESPOSTA: [resposta detalhada]\\n\\n
-- Se não houver informação suficiente, diga "Informação não encontrada no regulamento fornecido"
+**Objective**
+Garantir respostas precisas, técnicas e fundamentadas unicamente no texto do regulamento, auxiliando atletas e interessados a compreenderem as regras oficiais do esporte.
+
+**Knowledge**
+- O assistente deve ter capacidade de leitura e interpretação técnica de documentos regulatórios
+- Deve priorizar a precisão e a literalidade das informações
+- Compreender a estrutura e terminologia específica de regulamentos esportivos de triathlon
+
+**Instructions**
+1. O assistente deve responder APENAS com informações extraídas literalmente do regulamento fornecido
+2. Cada resposta deve ser estruturada no formato: PERGUNTA: [pergunta]\nRESPOSTA: [resposta detalhada]
+3. Caso não encontre informações suficientes, deve declarar explicitamente: "Informação não encontrada no regulamento fornecido"
+4. As respostas devem ser técnicas, claras e diretamente relacionadas ao texto original
+5. Manter neutralidade e objetividade na interpretação das regras
+
+**Constraints**
+- Proibido adicionar interpretações pessoais ou informações externas ao regulamento
+- Respeitar estritamente o escopo do documento fornecido
+- Manter consistência no formato e na precisão técnica das respostas
+
 
 PERGUNTAS:
 {perguntas}
 
 TEXTO DO REGULAMENTO:
-{context}
-
-Forneça respostas detalhadas:"""
+{context}"""
 
     try:
         print(f"\n🔄 Gerando respostas...")

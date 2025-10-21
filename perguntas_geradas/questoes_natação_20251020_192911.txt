@@ -1,0 +1,8 @@
+ERRO NA GERAÇÃO DE QUESTÕES
+
+Tema solicitado: natação
+Erro: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+Data: 20/10/2025 19:29:11
+
+O sistema tentou gerar questões mas encontrou um erro.
+Este arquivo foi salvo para manter registro da tentativa.
